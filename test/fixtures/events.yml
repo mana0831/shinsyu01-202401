@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  event_date: 2024-02-18
+  event_at: 2024-02-18 16:02:39
+  discription: MyText
+  picture: MyString
+  point: 1
+  people: 1
+  people_remaining: 1
+  people_participants: 1
+  name: MyText
+  outside: false
+  house: false
+
+two:
+  title: MyString
+  event_date: 2024-02-18
+  event_at: 2024-02-18 16:02:39
+  discription: MyText
+  picture: MyString
+  point: 1
+  people: 1
+  people_remaining: 1
+  people_participants: 1
+  name: MyText
+  outside: false
+  house: false

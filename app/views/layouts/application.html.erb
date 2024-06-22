@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>信州01アプリ</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+<body>
+  <header class="l-header">
+    <div class="l-header-wrap">
+      <nav class="l-header-nav">
+        <ul class="l-header-nav__list">
+          <li class="l-header-nav__item"><%= link_to "HOME", events_path %></li>
+          <li class="l-header-nav__item">担当作業</li>
+          <li class="l-header-nav__item"><%= link_to "行事・作業一覧", tasks_index_path %></li>
+          <li class="l-header-nav__item"><%= link_to "保護者作業登録", new_event_path %></li>
+        </ul>
+      </nav>
+
+      <!-- ログイン済みユーザー情報 -->
+      <ul class="l-header-nav02">
+        <li class="l-header-nav02__item">
+          <% if current_user.present? %>
+            <%= current_user.email %>
+          <% end %>
+        </li>
+        <li class="l-header-nav02__item">
+          <% if user_signed_in? %>
+            <%= button_to "Logout", destroy_user_session_path, method: :delete, data: { turbo: false }, class:"c-btn-logout" %>
+          <% else %>
+            <%= link_to "Login", new_user_session_path, class: "c-btn-logout" %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+
+
+    <div class="l-main">
+      <%= yield %>
+    </div>
+
+    <footer class="l-footer">
+      <div>
+        <span>信州01保護者会</span>
+      </div>
+    </footer>
+  </body>
+</html>

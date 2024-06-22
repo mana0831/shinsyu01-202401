@@ -1,0 +1,62 @@
+<div id="<%= dom_id event %>">
+  <p>
+    <strong>Title:</strong>
+    <%= event.title %>
+  </p>
+
+  <p>
+    <strong>Event date:</strong>
+    <%= event.event_date %>
+  </p>
+
+  <p>
+    <strong>Event at:</strong>
+    <%= event.event_at %>
+  </p>
+
+  <p>
+    <strong>Discription:</strong>
+    <%= event.discription %>
+  </p>
+
+  <p>
+    <strong>Picture:</strong>
+    <%= image_tag(event.picture_url, width:'600px')if event.picture.present? %>
+  </p>
+
+  <p>
+    <strong>Point:</strong>
+    <%= event.point %>
+  </p>
+
+  <p>
+    <strong>People:</strong>
+    <%= event.people %>
+  </p>
+
+  <p>
+    <strong>People remaining:</strong>
+    <%= event.people_remaining %>
+  </p>
+
+  <p>
+    <strong>People participants:</strong>
+    <%= event.people_participants %>
+  </p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= event.name %>
+  </p>
+
+  <p>
+    <strong>Outside:</strong>
+    <%= event.outside %>
+  </p>
+
+  <p>
+    <strong>House:</strong>
+    <%= event.house %>
+  </p>
+
+</div>

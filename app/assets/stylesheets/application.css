@@ -1,0 +1,523 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /********************
+  共通
+ ********************/
+ @charset "UTF-8";
+ @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap");
+ @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+
+/* ====================
+  foundation
+==================== */
+body {
+  color: #000;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "Noto Sans JP", "Noto Sans", Meiryo, sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.75;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.alert {
+  color: red;
+}
+
+/* ====================
+  layout
+==================== */
+.l-header {
+  border-bottom: 1px solid #e4e4e4;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  background-color: #32C2C2;
+  color: #fff;
+}
+
+.l-header-wrap {
+  height: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.l-header-nav {
+  margin-left: 16px;
+}
+.l-header-nav__list {
+  display: flex;
+  gap: 8px 16px;
+}
+.l-header-nav__item {
+  padding: 8px;
+}
+.l-header-nav__item a {
+  transition: 0.4s;
+  display: block;
+  box-sizing: border-box;
+
+}
+.l-header-nav__item a:hover {
+  /* color: #13838c; */
+  border-bottom: 1px solid #fff;
+}
+
+.l-header-nav02 {
+  display: flex;
+  align-items: center;
+}
+
+.l-header-nav02__item {
+padding: 8px 16px;
+}
+
+.l-main {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.l-event-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+.l-events {
+  overflow: hidden;
+  margin-bottom: 64px;
+}
+
+.l-footer {
+  background-color: #32C2C2;
+  color: #fff;
+  text-align: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+
+/* ====================
+  project
+==================== */
+
+/* ====================
+  募集中
+==================== */
+.p-recruiting {
+  margin-top: 42px;
+}
+.p-recruiting__title {
+  text-align: center;
+  margin-bottom: 16px;
+}
+.box23 {
+  position: relative;
+  /* margin: 2em 0 2em 40px; */
+  padding: 16px 24px;
+  background: #fff0c6;
+  border-radius: 30px;
+}
+.box23:before{
+  font-family: FontAwesome;
+  content: "\f111";
+  position: absolute;
+  font-size: 15px;
+  left: -40px;
+  bottom: 0;
+  color: #fff0c6;
+}
+.box23:after{
+  font-family: FontAwesome;
+  content: "\f111";
+  position: absolute;
+  font-size: 23px;
+  left: -23px;
+  bottom: 0;
+  color: #fff0c6;
+}
+.box23 p {
+  /* margin: 0; */
+  /* padding: 0; */
+}
+.p-recruiting__text {
+  font-size: 18px;
+  font-weight: 600;
+  width: fit-content;
+  margin: auto;
+}
+
+/* ====================
+  お知らせ
+==================== */
+.p-info {
+  background-color: #fff;
+}
+.p-info__inner {
+  margin: auto;
+  width: min(690px, 100%);
+  padding-top:56px;
+  padding-bottom: 103px;
+  padding-left: 32px;
+}
+
+.p-info__heading01 {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+}
+.p-info__list {
+  border-top: 1px solid #B2B2B2;
+  display: flex;
+  flex-direction: column;
+  margin-top: 28px;
+}
+.p-info__item {
+  border-bottom: 1px solid #B2B2B2;
+  display: grid;
+  grid-template-columns: 100px auto;
+  padding: 24px 0;
+}
+.p-info__date {
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-family: "Roboto", sans-serif;
+  margin-right: 25px;
+}
+.p-info__link:hover {
+  opacity: 0.6;
+}
+
+.p-info__button {
+  margin: 32px auto 0;
+  width: fit-content;
+}
+@media screen and (max-width: 767px) {
+  .p-info__button {
+    width: min(312px, 100%);
+  }
+}
+
+/* ====================
+  お知らせ
+==================== */
+.p-event-section {
+
+}
+.p-event-section + .p-event-section {
+  margin-top: 64px;
+}
+.p-event-heading {
+  background: #a5dac6; /*背景色*/
+  padding: 0.5em 1em;/*文字周りの余白*/
+  color: #444444;/*文字色*/
+  border-radius: 0.5em;/*角の丸み*/
+  margin-bottom: 24px;
+  font-size: 32px;
+}
+
+.p-event {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px 24px;
+}
+
+.p-event-card {
+  padding: 16px;
+  border: 1px solid #32C2C2;
+  border-radius: 12px;
+  margin-bottom: 32px;
+	position: relative;
+	transition: opacity 0.3s;
+	text-align: left;
+	text-decoration: none;
+  overflow: hidden;
+}
+
+.p-event-card__date {
+  background-color: #32C2C2;
+  border-radius: 8px 0 0 0;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  padding-top: 9px;
+  padding-bottom: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: 84px;
+  z-index: 1;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+.p-event-card__img {
+  border-radius: 8px;
+	display: block;
+	overflow: hidden;
+	padding-top: 66%;
+	position: relative;
+	width: 100%;
+	height: 0;
+  margin-bottom: 16px;
+}
+.p-event-card__img img {
+  object-fit: cover;
+	object-position: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: scale 0.3s;
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	vertical-align: middle;
+}
+.p-event__reclute {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  font-size: 20px;
+  text-align: center;
+  padding: 12px;
+}
+.p-event__reclute-people {
+
+}
+.p-event__reclute-day {
+  background-color: #fff0c6;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 8px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 24px;
+  background-color: #f3f3f3;
+  border-radius: 12px;
+  position: relative;
+}
+
+.progress-bar-inner {
+  position: absolute;
+  height: 100%;
+  background-color: #32C2C2;
+  border-radius: 12px;
+  width: 60%;
+}
+
+.p-event__title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.p-event__btn {
+  width: fit-content;
+  margin: 24px auto 16px auto;
+}
+.p-event__btn a {
+  background-color: #136A8C;
+  background-color: #13838c;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 6px 6px 0 #ECECEC;
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5;
+  min-width: 310px;
+  padding: 17px 80px;
+  position: relative;
+  text-align: center;
+  transition: box-shadow 0.3s, transform 0.3s;
+  width: fit-content;
+}
+.p-event__btn a:hover {
+  box-shadow: none;
+  transform: translate(6px, 6px);
+}
+.p-event__btn a:hover::after {
+  transform: translateX(3px);
+}
+
+.p-event__title-box {
+  display: grid;
+  grid-template-columns: 40px auto;
+  gap: 16px;
+  justify-content: center;
+}
+
+/* ====================
+  calendar
+==================== */
+.simple-calendar {
+  background-color: #fff;
+  margin-top: 24px;
+}
+
+.calendar-heading {
+  text-align: center;
+}
+
+.calendar-title {
+  font-family: "Roboto";
+  font-weight: 600;
+  font-size: 28px;
+}
+
+.calendar-nav {
+
+}
+.calendar-nav a {
+  padding: 4px 8px;
+}
+
+.simple-calendar table {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.simple-calendar table thead tr {
+}
+
+.simple-calendar table thead tr th {
+  background-color: #a5dac6;
+  width: 14%;
+}
+
+.simple-calendar table thead tr td {
+
+}
+.day {
+  min-height: 88px;
+  height: 88px;
+  font-family: "Roboto";
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.has-events {
+  background: #fff0c6;
+}
+.current-month {
+}
+
+
+.current-month,.prev-month,.next-month {
+  vertical-align: top;
+}
+
+.prev-month {
+  background-color: #ECECEC;
+}
+.next-month {
+  background-color: #ECECEC;
+}
+
+.wday-1 {
+  border-left: 1px solid #ccc;
+}
+.calendar-month-nav > a{
+  font-size: 18px;
+  padding: 4px 16px 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.simple-calendar {
+  .wday-0 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+  .today {}
+  .past {}
+  .future {}
+  .start-date {}
+
+  .current-month {}
+
+ }
+
+
+
+
+/* ====================
+  component
+==================== */
+.c-button-primary {
+  background-color: #136A8C;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 6px 6px 0 #ECECEC;
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5;
+  min-width: 310px;
+  padding: 17px 80px;
+  position: relative;
+  text-align: center;
+  transition: box-shadow 0.3s, transform 0.3s;
+  width: fit-content;
+}
+.c-button-primary--bg02 {
+  background-color: #13838c;
+}
+.c-button-primary:hover {
+  box-shadow: none;
+  transform: translate(6px, 6px);
+}
+.c-button-primary:hover::after {
+  transform: translateX(3px);
+}
+
+.c-btn-logout {
+  background-color: #fff;
+  color: #1d1d1d;
+  padding: 8px 16px;
+  display: block;
+}
+
+.c-btn-logout:hover {
+  opacity: 0.8;
+}

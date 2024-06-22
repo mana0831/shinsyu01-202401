@@ -1,0 +1,130 @@
+<!-- event トップページ -->
+
+<!-- <p style="color: green"><%= notice %></p> -->
+
+  <div class="l-event-top">
+    <!-- カレンダー -->
+    <div>
+        <%= month_calendar events: @tasks do |date, tasks| %>
+          <%= date.day %>
+          <br>
+
+          <% tasks.each do |task| %>
+            <div>
+            <%= link_to task.title, task %>
+            </div>
+          <% end %>
+        <% end %>
+    </div>
+
+
+    <div>
+      <div class="p-recruiting">
+        <div class="box23">
+          <p class="p-recruiting__title">いつもご協力ありがとうございます！</p>
+          <p class="p-recruiting__text">作業者募集中:７件<br>
+          地域ボランティア募集中:３件<br>
+          あなたのポイント：２４</p>
+        </div>
+      </div>
+
+      <!-- お知らせ -->
+      <%= render "info" %>
+    </div>
+  </div>
+
+
+  <!-- 行事一覧の表示 -->
+  <div id="events" class="l-events">
+    <section class="p-event-section">
+      <h2 class="p-event-heading">作業者募集中</h2>
+
+      <% @events.in_groups_of(3, false) do |event_group| %>
+        <div class="p-event">
+          <% event_group.each do |event| %>
+            <div class="p-event-card">
+              <span class="p-event-card__date"><%= event.event_date %></span>
+
+              <picture class="p-event-card__img">
+                <%= image_tag(event.picture_url, width:'100%')if event.picture.present? %>
+              </picture>
+
+              <div class="p-event__title-box">
+                <% if event.outside %>
+                  <%= image_tag 'out.png', alt: 'Inside Image' %>
+                  <% else %>
+                  <%= image_tag 'hause.png', alt: 'Outside Image' %>
+                <% end %>
+
+                <p class="p-event__title">
+                  <%= event.title %>
+                </p>
+              </div>
+
+              <div class="p-event__reclute">
+                <p class="p-event__reclute-people">募集人数：<%= event.people %></p>
+                <p class="p-event__reclute-day">残り日数：◯日</p>
+              </div>
+
+              <p>あと◯人</p>
+              <div class="progress-bar">
+                <div class="progress-bar-inner"></div>
+              </div>
+
+              <div class="p-event__btn">
+                <%= link_to "詳細を見る →", event %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </section>
+
+    <section class="p-event-section">
+      <h2 class="p-event-heading">地域ボランティア募集中</h2>
+
+      <% @events.in_groups_of(3, false) do |event_group| %>
+        <div class="p-event">
+          <% event_group.each do |event| %>
+            <div class="p-event-card">
+              <span class="p-event-card__date"><%= event.event_date %></span>
+
+              <picture class="p-event-card__img">
+                <%= image_tag(event.picture_url, width:'100%')if event.picture.present? %>
+              </picture>
+
+              <div class="p-event__title-box">
+                <% if event.outside %>
+                  <%= image_tag 'out.png', alt: 'Inside Image' %>
+                  <% else %>
+                  <%= image_tag 'hause.png', alt: 'Outside Image' %>
+                <% end %>
+
+                <p class="p-event__title">
+                  <%= event.title %>
+                </p>
+              </div>
+
+              <div class="p-event__reclute">
+                <p class="p-event__reclute-people">募集人数：<%= event.people %></p>
+                <p class="p-event__reclute-day">残り日数：◯日</p>
+              </div>
+
+              <p>あと◯人</p>
+              <div class="progress-bar">
+                <div class="progress-bar-inner"></div>
+              </div>
+
+              <div class="p-event__btn">
+                <%= link_to "詳細を見る →", event %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </section>
+  </div>
+
+    <%#= render event %>
+  <%# end %>
+</div>
